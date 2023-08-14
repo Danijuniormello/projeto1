@@ -1,1 +1,23 @@
+header {
+    background-color: rgb(89, 124, 101);
+    color: rgb(231, 231, 187);
+    padding: 20px;
+    text-align: center;
+ }
 
+babado {
+    background-color: aquamarine;
+    border-color: darkcyan;
+
+}
+
+
+.custom-button {
+    margin: 5px; 
+    padding: 10px 20px;
+    background-color: #cfc77a;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
