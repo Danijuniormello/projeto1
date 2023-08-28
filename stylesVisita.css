@@ -1,5 +1,6 @@
 .gallery {
   position: center;
+  width: "200";
 }
 .prev, .next {
   position: absolute;
