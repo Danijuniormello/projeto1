@@ -3,8 +3,9 @@
   position: relative;
 }
 .image {
-  max-width: 400px;
+  width: 100%; /* Defina o tamanho máximo desejado */
   height: auto;
+  max-width: 600px; /* Defina a largura máxima desejada */
 }
 .prev, .next {
   position: absolute;
