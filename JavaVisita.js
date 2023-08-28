@@ -19,4 +19,3 @@ function showImage(index) {
 
 showImage(currentImageIndex);
 
-
