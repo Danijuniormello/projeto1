@@ -1,27 +1,17 @@
-body {
-  background-color: #F0E68C; 
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* stylesVisita.css */
+.gallery {
+  position: relative;
 }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
 }
-
-.photo-gallery {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+.prev {
+  left: 10px;
 }
-
-.photo-gallery img {
-  max-width: 100%;
-  height: auto;
+.next {
+  right: 10px;
 }
-
-
