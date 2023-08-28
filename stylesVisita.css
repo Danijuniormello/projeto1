@@ -1,5 +1,4 @@
-.letreiro{
- text-align: center;
+
 }
 .gallery {
   display: flex;
@@ -7,7 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  max-width: 200px; 
+  max-width: 500px; 
   margin: 0 auto;
 }
 
