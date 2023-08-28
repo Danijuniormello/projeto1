@@ -2,6 +2,10 @@
 .gallery {
   position: relative;
 }
+.image {
+  max-width: 400px;
+  height: auto;
+}
 .prev, .next {
   position: absolute;
   top: 50%;
