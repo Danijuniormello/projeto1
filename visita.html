@@ -1,31 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesVisita.css">
-  <title>Relatório de Visita Técnica ao Campus Colorado</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesVisita.css">
+<title>Zoomable Image Gallery</title>
 </head>
-<body>
-  <div class="container">
-    <h1>Relatório de Visita Técnica ao Campus Colorado</h1>
-    <p>No dia 18 de Agosto, foi realizada uma visita técnica ao campus da Universidade Colorado com o objetivo de conhecer o campus e explorar suas instalações. A visita proporcionou uma oportunidade valiosa para conhecer de perto o ambiente acadêmico e as atividades em andamento.</p>
-    <p>Durante a visita, foi possível percorrer o campus e capturar diversas imagens representativas dos edifícios, áreas de convívio estudantil e espaços de aprendizado. Através dessa tarefa, foi evidenciada a diversidade arquitetônica do campus e a atmosfera vibrante que o permeia.</p>
-    <p>Além das atividades de fotografia, houve também a oportunidade de explorar o campo físico da universidade. As instalações que remetem aos cursos lá ofertados foram também exploradas, proporcionando uma compreensão mais profunda das atividades acadêmicas em curso.</p>
-    <p>Em conclusão, a visita técnica ao campus Colorado foi extremamente proveitosa e enriquecedora. A tarefa de fotografar o campus proporcionou uma visão abrangente das instalações, enquanto a exploração do campo físico e a imersão no projeto de câmara escura contribuíram para uma compreensão mais profunda dos aspectos acadêmicos e técnicos da universidade. A experiência foi enriquecedora e ampliou nossa percepção sobre a importância da fotografia e do ambiente universitário.</p>
+<body style="background-color: #F0E68C;">
+  <h1>Galeria de Fotos</h1><br>
+  <p>**Relatório de Visita Técnica ao Campus Colorado**</p>
+  <p>No dia 18 de Agosto, foi realizada uma visita técnica ao campus da Universidade Colorado com o objetivo de conhecer o campus e explorar suas instalações. A visita proporcionou uma oportunidade valiosa para conhecer de perto o ambiente acadêmico e as atividades em andamento.</p>
+  <p>Durante a visita, foi possível percorrer o campus e capturar diversas imagens representativas dos edifícios, áreas de convívio estudantil e espaços de aprendizado. Através dessa tarefa, foi evidenciada a diversidade arquitetônica do campus e a atmosfera vibrante que o permeia.</p>
+  <p>Além das atividades de fotografia, houve também a oportunidade de explorar o campo físico da universidade. As instalações que remetem aos cursos lá ofertados foram também exploradas, proporcionando uma compreensão mais profunda das atividades acadêmicas em curso.</p>
+  <p>Em conclusão, a visita técnica ao campus Colorado foi extremamente proveitosa e enriquecedora. A tarefa de fotografar o campus proporcionou uma visão abrangente das instalações, enquanto a exploração do campo físico e a imersão no projeto de câmara escura contribuíram para uma compreensão mais profunda dos aspectos acadêmicos e técnicos da universidade. A experiência foi enriquecedora e ampliou nossa percepção sobre a importância da fotografia e do ambiente universitário.</p>
+  <h2>Aqui ficará a Galeria de Fotos</h2><br>
+  <div class="gallery">
+    <img src="fotos/20230816_105646.jpg" alt="Image 1" class="image">
+    <img src="fotos/20230816_144604.jpg" alt="Image 2" class="image">
+    <img src="fotos/20230816_144748.jpg" alt="Image 3" class="image">
+    <img src="fotos/20230816_145502.jpg" alt="Image 4" class="image">
+    <img src="fotos/20230816_150025.jpg" alt="Image 5" class="image">
+    <img src="fotos/20230816_153056.jpg" alt="Image 6" class="image">
+    <img src="fotos/20230816_154853.jpg" alt="Image 7" class="image">
+    <img src="fotos/20230816_155844.jpg" alt="Image 8" class="image">
+    <img src="fotos/2259D141-1FE1-4C34-8E79-CBE2111A748F.jpg" alt="Image 9" class="image">
+    <img src="fotos/IMG-20230822-WA0058.jpg" alt="Image 10" class="image">
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
   </div>
-  <div class="photo-gallery">
-    <img src="20230816_105646.jpg" alt="Image 1" class="image">
-    <img src="20230816_144604.jpg" alt="Image 2" class="image">
-    <img src="20230816_144748.jpg" alt="Image 3" class="image">
-    <img src="20230816_145502.jpg" alt="Image 4" class="image">
-    <img src="20230816_150025.jpg" alt="Image 5" class="image">
-    <img src="20230816_153056.jpg" alt="Image 6" class="image">
-    <img src="20230816_154853.jpg" alt="Image 7" class="image">
-    <img src="20230816_155844.jpg" alt="Image 8" class="image">
-    <img src="2259D141-1FE1-4C34-8E79-CBE2111A748F.jpg" alt="Image 9" class="image">
-    <img src="IMG-20230822-WA0058.jpg" alt="Image 10" class="image">
-  </div>
+  <script src="script.js"></script>
+  <script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.image');
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+      showImage(currentImageIndex);
+    }
+
+    function showImage(index) {
+      images.forEach((image, i) => {
+        image.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
+    showImage(currentImageIndex);
+  </script>
 </body>
 </html>
+
 
