@@ -4,43 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="stylesVisita.css">
-<title>Galeria</title>
+<title>Zoomable Image Gallery</title>
 </head>
-<body style="background-color:  #F5F5F5;">
-  <h2>Galeria de Fotos</h2><br>
-  <p>Relatório de Visita Técnica ao Campus Colorado</p>
+<body style="background-color: #fadaef;">
+  <h1>Galeria de Fotos</h1><br>
+  <p>**Relatório de Visita Técnica ao Campus Colorado**</p>
   <p>No dia 16 de Agosto, foi realizada uma visita técnica ao campus  Colorado com o objetivo de conhecer o campus e explorar suas instalações. A visita proporcionou uma oportunidade valiosa para conhecer de perto o ambiente acadêmico e as atividades em andamento.</p>
   <p>Durante a visita, almoçamos na dependencia do campus, almoço esse realizado com ingredientes produzido nas dependêcias do instituto, apos isso visitamos o auditório e as salas onde fomos palestrados e introduzidos ao projeto que motivou a nossa visita, o projeto Camâra escura, após tudo isso foi possível percorrer o campus e capturar diversas imagens representativas dos edifícios, áreas de convívio estudantil e espaços de aprendizado. Através dessa tarefa, foi evidenciada a diversidade arquitetônica do campus e a atmosfera vibrante que o permeia.</p>
   <p>Além das atividades de fotografia, houve também a oportunidade de explorar o campo físico do instituto onde as atividades agronômicas são desenvolvidas. As instalações que remetem as atividades foram muito bem exploradas, proporcionando uma compreensão mais profunda das atividades acadêmicas em curso.</p>
   <p>Em conclusão, a visita técnica ao campus Colorado foi extremamente proveitosa e enriquecedora. A visita ao campus proporcionou uma visão abrangente das instalações de aprendizado que seus alunos utilizam, enquanto a exploração do campo físico e a imersão no projeto de câmara escura contribuíram para uma compreensão mais profunda dos aspectos acadêmicos e técnicos.</p>
+  <h2>Aqui ficará a Galeria de Fotos</h2><br>
 
-<style>
-  .galeriacentro {
-    text-align: center;
-      font-size: 20px;
-  }
-</style>
-<p class="galeriacentro">Aqui ficara a Galeria de fotos:</p>
-  <br>
-  
-  <div class="gallery">
-    <img src="fotos/20230816_105646.jpg" alt="Image 1" class="image">
-    <img src="fotos/20230816_144604.jpg" alt="Image 2" class="image">
-    <img src="fotos/20230816_144748.jpg" alt="Image 3" class="image">
-    <img src="fotos/20230816_145502.jpg" alt="Image 4" class="image">
-    <img src="fotos/20230816_150025.jpg" alt="Image 5" class="image">
-    <img src="fotos/20230816_153056.jpg" alt="Image 6" class="image">
-    <img src="fotos/20230816_154853.jpg" alt="Image 7" class="image">
-    <img src="fotos/20230816_155844.jpg" alt="Image 8" class="image">
-    <img src="fotos/2259D141-1FE1-4C34-8E79-CBE2111A748F.jpg" alt="Image 9" class="image">
-    <img src="fotos/IMG-20230822-WA0058.jpg" alt="Image 10" class="image">
-    <div class="navigation">
-      <button onclick="changeImage(-1)">Anterior</button>
-      <button onclick="changeImage(1)">Próxima</button>
-    </div>
+  <div class="thumbnails">
+    <div class="thumbnails">
+        <img src="fotos/20230816_105646.jpg" alt="Image 1" class="thumbnail" onclick="openFullScreen(0)">
+        <img src="fotos/20230816_144604.jpg" alt="Image 2" class="thumbnail" onclick="openFullScreen(1)">
+        <img src="fotos/20230816_144748.jpg" alt="Image 3" class="thumbnail" onclick="openFullScreen(2)">
+        <img src="fotos/20230816_145502.jpg" alt="Image 4" class="thumbnail" onclick="openFullScreen(3)">
+        <img src="fotos/20230816_150025.jpg" alt="Image 5" class="thumbnail" onclick="openFullScreen(4)">
+        <img src="fotos/20230816_153056.jpg" alt="Image 6" class="thumbnail" onclick="openFullScreen(5)">
+        <img src="fotos/20230816_154853.jpg" alt="Image 7" class="thumbnail" onclick="openFullScreen(6)">
+        <img src="fotos/20230816_155844.jpg" alt="Image 8" class="thumbnail" onclick="openFullScreen(7)">
+        <img src="fotos/2259D141-1FE1-4C34-8E79-CBE2111A748F.jpg" alt="Image 9" class="thumbnail" onclick="openFullScreen(8)">
+        <img src="fotos/IMG-20230822-WA0058.jpg" alt="Image 10" class="thumbnail" onclick="openFullScreen(9)">
+      </div>
+   
+  </div>
+  <div class="fullscreen-container">
+    <span class="close-button" onclick="closeFullScreen()">&times;</span>
+    <img src="" alt="Fullscreen Image" class="fullscreen-image">
+
+    <a class="prev" onclick="changeFullScreenImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeFullScreenImage(1)">&#10095;</a>
   </div>
   <script src="JavaVisita.js"></script>
 </body>
 </html>
-
 
