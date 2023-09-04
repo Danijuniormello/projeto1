@@ -1,5 +1,7 @@
 let currentImageIndex = 0;
-const images = document.querySelectorAll('.image');
+const images = document.querySelectorAll('.thumbnail');
+const fullscreenContainer = document.querySelector('.fullscreen-container');
+const fullscreenImage = document.querySelector('.fullscreen-image');
 
 function changeFullScreenImage(direction) {
   currentImageIndex += direction;
@@ -14,15 +16,14 @@ function changeFullScreenImage(direction) {
 function openFullScreen(index) {
   currentImageIndex = index;
   showFullScreenImage(currentImageIndex);
-  document.querySelector('.fullscreen-container').style.display = 'block';
+  fullscreenContainer.style.display = 'block';
 }
 
 function closeFullScreen() {
-  document.querySelector('.fullscreen-container').style.display = 'none';
+  fullscreenContainer.style.display = 'none';
 }
 
 function showFullScreenImage(index) {
-  const fullscreenImage = document.querySelector('.fullscreen-image');
   fullscreenImage.src = images[index].src;
 }
 
