@@ -1,0 +1,50 @@
+/* Estilo para o cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo para o conteúdo principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+/* Estilo para os contêineres de música */
+.music-container {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilo para os links de navegação */
+.music-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.music-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.music-navigation li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.music-navigation a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo para os controles de áudio */
+audio {
+    width: 100%;
+}
+
+/* Adicione mais estilos conforme necessário */
