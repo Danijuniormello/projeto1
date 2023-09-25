@@ -39,6 +39,17 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.image-container {
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .audio-info {
     color: cyan;
     font-size: 18px;
