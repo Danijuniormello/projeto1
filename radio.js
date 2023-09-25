@@ -1,22 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtém todos os links de navegação
-    const navigationLinks = document.querySelectorAll(".music-navigation a");
+const audio = document.getElementById('audio');
+const playPauseButton = document.getElementById('play-pause-button');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
 
-    // Adiciona um ouvinte de evento de clique a cada link de navegação
-    navigationLinks.forEach((link) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Evita que o link atualize a página
+const songs = [
+    'radiomp3/Como Nossos Pais(MP3_160K).mp3',
+    'radiomp3/EVIL(MP3_160K).mp3',
+    'radiomp3/Foi Mal(MP3_160K).mp3',
+    'radiomp3/Giant Woman (feat. Zach Callison)(MP3_160K).mp3',
+    'radiomp3/Greta Van Fleet - Light My Love (Audio)(MP3_160K).mp3',
+    'radiomp3/Infinity Pools(MP3_160K).mp3',
+    'radiomp3/The Principal(MP3_160K).mp3',
+    'radiomp3/The Technicolors - Howl (Official Music Video)(MP3_160K).mp3',
+    'radiomp3/URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3',
+    'radiomp3/Wait a Minute_(MP3_160K).mp3',
+];
 
-            // Obtém o destino do link (o ID da música)
-            const targetId = this.getAttribute("href").substring(1);
+let currentSongIndex = 0;
 
-            // Obtém o elemento da música de destino
-            const targetMusic = document.getElementById(targetId);
+function loadSong() {
+    audio.src = songs[currentSongIndex];
+}
 
-            // Role até a música de destino
-            if (targetMusic) {
-                targetMusic.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    });
-});
+function playPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = 'Pause';
+    } else {
+        audio.pause();
+        playPauseButton.textContent = 'Play';
+    }
+}
+
+function playNext() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong();
+    audio.play();
+}
+
+function playPrev() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong();
+    audio.play();
+}
+
+loadSong();
+
+playPauseButton.addEventListener('click', playPause);
+nextButton.addEventListener('click', playNext);
+prevButton.addEventListener('click', playPrev);
