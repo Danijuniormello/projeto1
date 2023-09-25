@@ -6,7 +6,7 @@ const musicas = [
         src: "radiomp3/Como Nossos Pais(MP3_160K).mp3",
     },
     {
-        nome: "EVIL.",
+        nome: "EVIL",
         artista: "Melaine Martinez",
         src: "radiomp3/EVIL(MP3_160K).mp3",
     },
