@@ -1,51 +1,79 @@
-const audio = document.getElementById('audio');
-const playPauseButton = document.getElementById('play-pause-button');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
 
-const songs = [
-    'radiomp3/Como Nossos Pais(MP3_160K).mp3',
-    'radiomp3/EVIL(MP3_160K).mp3',
-    'radiomp3/Foi Mal(MP3_160K).mp3',
-    'radiomp3/Giant Woman (feat. Zach Callison)(MP3_160K).mp3',
-    'radiomp3/Greta Van Fleet - Light My Love (Audio)(MP3_160K).mp3',
-    'radiomp3/Infinity Pools(MP3_160K).mp3',
-    'radiomp3/The Principal(MP3_160K).mp3',
-    'radiomp3/The Technicolors - Howl (Official Music Video)(MP3_160K).mp3',
-    'radiomp3/URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3',
-    'radiomp3/Wait a Minute_(MP3_160K).mp3',
+const musicas = [
+    {
+        nome: "Como Nossos Pais",
+        artista: "Elis Regina",
+        src: "radiomp3/Como Nossos Pais(MP3_160K).mp3",
+    },
+    {
+        nome: "EVIL.",
+        artista: "Melaine Martinez",
+        src: "radiomp3/EVIL(MP3_160K).mp3",
+    },
+    {
+        nome: "Foi Mal",
+        artista: "Urias",
+        src: "radiomp3/Foi Mal(MP3_160K).mp3",
+    },
+    {
+        nome: "Giant Woman",
+        artista: "Zach Callison",
+        src: "radiomp3/Giant Woman (feat. Zach Callison)(MP3_160K).mp3",
+    },
+    {
+        nome: "Light My Love",
+        artista: "Greta Van Fleet",
+        src: "radiomp3/Greta Van Fleet - Light My Love (Audio)(MP3_160K).mp3",
+    },
+    {
+        nome: "Infinity Pools",
+        artista: "The Technicolors",
+        src: "radiomp3/Infinity Pools(MP3_160K).mp3",
+    },
+    {
+        nome: "The Principal",
+        artista: "Melaine Martinez",
+        src: "radiomp3/The Principal(MP3_160K).mp3",
+    },
+    {
+        nome: "Howl",
+        artista: "The Technicolors",
+        src: "radiomp3/The Technicolors - Howl (Official Music Video)(MP3_160K).mp3",
+    },
+    {
+        nome: "URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3",
+        artista: "Artista 9",
+        src: "radiomp3/URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3",
+    },
+    {
+        nome: "Wait a Minute",
+        artista: "Willow",
+        src: "radiomp3/Wait a Minute_(MP3_160K).mp3",
+    },
 ];
 
-let currentSongIndex = 0;
+let musicaAtualIndex = 0; 
 
-function loadSong() {
-    audio.src = songs[currentSongIndex];
+
+const audio = document.getElementById("audio");
+const nomeDaMusica = document.getElementById("nome-da-musica");
+const nomeDoArtista = document.getElementById("nome-do-artista");
+
+function atualizarInformacoesDaMusica() {
+    const musicaAtual = musicas[musicaAtualIndex];
+    nomeDaMusica.textContent = musicaAtual.nome;
+    nomeDoArtista.textContent = musicaAtual.artista;
+    audio.src = musicaAtual.src;
 }
 
-function playPause() {
-    if (audio.paused) {
-        audio.play();
-        playPauseButton.textContent = 'Pause';
-    } else {
-        audio.pause();
-        playPauseButton.textContent = 'Play';
-    }
-}
 
-function playNext() {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong();
+function tocarProximaMusica() {
+    musicaAtualIndex = (musicaAtualIndex + 1) % musicas.length;
+    atualizarInformacoesDaMusica();
     audio.play();
 }
 
-function playPrev() {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    loadSong();
-    audio.play();
-}
+document.getElementById("next-button").addEventListener("click", tocarProximaMusica);
 
-loadSong();
 
-playPauseButton.addEventListener('click', playPause);
-nextButton.addEventListener('click', playNext);
-prevButton.addEventListener('click', playPrev);
+atualizarInformacoesDaMusica();
