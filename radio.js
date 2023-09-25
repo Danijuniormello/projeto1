@@ -75,3 +75,14 @@ document.getElementById("next-button").addEventListener("click", tocarProximaMus
 
 
 atualizarInformacoesDaMusica();
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        document.getElementById("play-pause-button").textContent = "Pausar";
+    } else {
+        audio.pause();
+        document.getElementById("play-pause-button").textContent = "Play";
+    }
+}
+document.getElementById("play-pause-button").addEventListener("click", togglePlayPause);
+
