@@ -107,3 +107,26 @@ button:hover {
 .neon-glow {
     text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan;
 }
+
+.beat {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 128, 0, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 25px);
+    transform-origin: center bottom;
+    animation: beatAnimation 0.2s linear alternate infinite;
+}
+
+@keyframes beatAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
