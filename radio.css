@@ -108,27 +108,3 @@ button:hover {
     text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan;
 }
 
-
-.beat {
-    width: 20px;
-    height: 20px;
-    background-color: cyan;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 60px; 
-    left: calc(50% - 10px);
-    transform-origin: center bottom;
-    animation: beatAnimation 0.2s linear alternate infinite;
-}
-
-@keyframes beatAnimation {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1.2);
-        opacity: 0;
-    }
-}
-
