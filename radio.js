@@ -66,11 +66,16 @@ function atualizarInformacoesDaMusica() {
     audio.src = musicaAtual.src;
 }
 
-
 function tocarProximaMusica() {
-    musicaAtualIndex = (musicaAtualIndex + 1) % musicas.length;
+    musicaAtualIndex = (musicaAtualIndex + 1) % musicas.length; 
     atualizarInformacoesDaMusica();
     audio.play();
+
+   
+    const beat = document.querySelector(".beat");
+    beat.style.animation = "none";
+    void beat.offsetWidth;
+    beat.style.animation = null;
 }
 
 document.getElementById("next-button").addEventListener("click", tocarProximaMusica);
