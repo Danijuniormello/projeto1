@@ -3,36 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="musica.css">
-    <script src="radio.js" defer></script>
-    <title>Galeria de Músicas</title>
+    <title>Player de Música com Fundo de Vídeo</title>
+    <link rel="stylesheet" href="radio.css">
 </head>
 <body>
-    <header>
-        <h1>Galeria de Músicas</h1>
-    </header>
-    <main>
-        <div class="music-container" id="music1">
-            <audio controls>
-                <source src="babado/danger.mpeg" type="audio/mpeg">
-            </audio>
+    <video id="video-bg" autoplay muted loop>
+        <source src="videomp47/Green and Orange Vertical.mp4" type="video/mp4">
+    </video>
+    <div class="player-container">
+        <div class="audio-info neon-glow">
+            <h1>Minha playlist babadeira</h1>
+            <p>top 10 melhores musicas do mundo</p>
         </div>
-        
-        <div class="music-container" id="music2">
-            <audio controls>
-                <source src="babado/light my love.mpeg" type="audio/mpeg">
-            </audio>
+        <audio id="audio" controls autoplay></audio>
+        <div class="controls">
+            <button id="prev-button">Anterior</button>
+            <button id="play-pause-button">Play</button>
+            <button id="next-button">Próxima</button>
         </div>
-        
-        <!-- Adicione mais músicas aqui -->
-
-    </main>
-    <nav class="music-navigation">
-        <ul>
-            <li><a href="#music1">Música 1</a></li>
-            <li><a href="#music2">Música 2</a></li>
-            <!-- Adicione mais links de navegação para outras músicas -->
-        </ul>
-    </nav>
+    </div>
+    <script src="radio.js"></script>
 </body>
 </html>
