@@ -52,20 +52,24 @@ const musicas = [
     },
 ];
 
-let musicaAtualIndex = 0; 
 
-
+let musicaAtualIndex = 0;
 const audio = document.getElementById("audio");
 const nomeDaMusica = document.getElementById("nome-da-musica");
 const nomeDoArtista = document.getElementById("nome-do-artista");
 
 
+atualizarInformacoesDaMusica();
+
+
 function atualizarInformacoesDaMusica() {
-    const musicaAtual = musicas[musicaAtualIndex];
-    nomeDaMusica.textContent = musicaAtual.nome;
-    nomeDoArtista.textContent = musicaAtual.artista;
-    audio.src = musicaAtual.src;
+    nomeDaMusica.textContent = musicas[musicaAtualIndex].nome;
+    nomeDoArtista.textContent = musicas[musicaAtualIndex].artista;
+    audio.src = musicas[musicaAtualIndex].src;
 }
+
+
+document.getElementById("next-button").addEventListener("click", tocarProximaMusica);
 
 
 function tocarProximaMusica() {
@@ -75,8 +79,25 @@ function tocarProximaMusica() {
 }
 
 
-document.getElementById("next-button").addEventListener("click", tocarProximaMusica);
+document.getElementById("play-pause-button").addEventListener("click", togglePlayPause);
+
+a
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        document.getElementById("play-pause-button").textContent = "Pausar";
+    } else {
+        audio.pause();
+        document.getElementById("play-pause-button").textContent = "Play";
+    }
+}
 
 
-atualizarInformacoesDaMusica();
+document.getElementById("prev-button").addEventListener("click", tocarMusicaAnterior);
 
+r
+function tocarMusicaAnterior() {
+    musicaAtualIndex = (musicaAtualIndex - 1 + musicas.length) % musicas.length; s
+    atualizarInformacoesDaMusica();
+    audio.play();
+}
