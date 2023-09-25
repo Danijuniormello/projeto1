@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danify</title></title>
+    <title>Player de Música com Fundo de Vídeo</title>
     <link rel="stylesheet" href="radio.css">
 </head>
 <body>
     <video id="video-bg" autoplay muted loop>
-        <source src="videomp47/Green and Orange Vertical.mp4" type="video/mp4">
+        <source src="videomp4/Green and Orange Vertical.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
     </video>
     <div class="player-container">
+        <div class="image-container">
+            <img src="videomp4/gatinho.jpg" alt="Imagem da capa da música">
+        </div>
         <div class="audio-info neon-glow">
-            <h1>Minha playlist babadeira</h1>
-            <p>top 10 melhores musicas do mundo</p>
+            <p>Nome da Música</p>
+            <p>Nome do Artista</p>
         </div>
         <audio id="audio" controls autoplay></audio>
         <div class="controls">
@@ -25,3 +29,4 @@
     <script src="radio.js"></script>
 </body>
 </html>
+
