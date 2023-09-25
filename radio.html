@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danify</title>
+    <title>Player de Música com Fundo de Vídeo</title>
     <link rel="stylesheet" href="radio.css">
 </head>
 <body>
     <video id="video-bg" autoplay muted loop>
-        <source src="videomp47/Green and Orange Vertical.mp4" type="video/mp4">
+        <source src="videomp4/Green and Orange Vertical.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
     </video>
     <div class="player-container">
         <div class="image-container">
-            <img src="videomp47/gatinho.jpg" alt="Imagem da capa da música">
+            <img src="videomp4/gatinho.jpg" alt="Imagem da capa da música">
         </div>
         <div class="audio-info neon-glow">
-            <p>Nome da Música</p>
-            <p>Nome do Artista</p>
+            <p id="nome-da-musica">Nome da Música</p>
+            <p id="nome-do-artista">Nome do Artista</p>
         </div>
-        <audio id="audio" controls autoplay></audio>
+        <audio id="audio" controls autoplay>
+            <!-- As 10 músicas -->
+            <source src="radiomp3/Como Nossos Pais(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/EVIL(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/Foi Mal(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/Giant Woman (feat. Zach Callison)(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/Greta Van Fleet - Light My Love (Audio)(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/Infinity Pools(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/The Principal(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/The Technicolors - Howl (Official Music Video)(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3" type="audio/mpeg">
+            <source src="radiomp3/Wait a Minute_(MP3_160K).mp3" type="audio/mpeg">
+        </audio>
         <div class="controls">
             <button id="prev-button">Anterior</button>
             <button id="play-pause-button">Play</button>
@@ -28,4 +41,3 @@
     <script src="radio.js"></script>
 </body>
 </html>
-
