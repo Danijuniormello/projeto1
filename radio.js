@@ -41,7 +41,7 @@ const musicas = [
         src: "radiomp3/The Technicolors - Howl (Official Music Video)(MP3_160K).mp3",
     },
     {
-        nome: "URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3",
+        nome: "URIAS",
         artista: "Artista 9",
         src: "radiomp3/URIAS - DANGER ( OFFICIAL VISUALIZER)(MP3_160K).mp3",
     },
