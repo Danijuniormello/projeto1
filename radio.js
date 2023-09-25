@@ -59,6 +59,7 @@ const audio = document.getElementById("audio");
 const nomeDaMusica = document.getElementById("nome-da-musica");
 const nomeDoArtista = document.getElementById("nome-do-artista");
 
+
 function atualizarInformacoesDaMusica() {
     const musicaAtual = musicas[musicaAtualIndex];
     nomeDaMusica.textContent = musicaAtual.nome;
@@ -66,23 +67,16 @@ function atualizarInformacoesDaMusica() {
     audio.src = musicaAtual.src;
 }
 
+
 function tocarProximaMusica() {
     musicaAtualIndex = (musicaAtualIndex + 1) % musicas.length; 
     atualizarInformacoesDaMusica();
     audio.play();
 }
+
+
 document.getElementById("next-button").addEventListener("click", tocarProximaMusica);
 
 
 atualizarInformacoesDaMusica();
-function togglePlayPause() {
-    if (audio.paused) {
-        audio.play();
-        document.getElementById("play-pause-button").textContent = "Pausar";
-    } else {
-        audio.pause();
-        document.getElementById("play-pause-button").textContent = "Play";
-    }
-}
-document.getElementById("play-pause-button").addEventListener("click", togglePlayPause);
 
